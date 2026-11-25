@@ -1,0 +1,29 @@
+{
+  "fancyToolbar": {
+    "enabled": true,
+    "position": "Top",
+    "height": 30,
+    "hideMode": "Never",
+    "dynamicColor": true
+  },
+  "seelenweg": {
+    "enabled": true,
+    "position": "Bottom",
+    "mode": "MinContent",
+    "hideMode": "OnOverlap",
+    "size": 46,
+    "zoomSize": 64,
+    "margin": 8,
+    "padding": 6,
+    "borderRadius": 16,
+    "spaceBetweenItems": 6,
+    "showInstanceCounter": true
+  },
+  "windowManager": {
+    "enabled": false
+  },
+  "launcher": {
+    "enabled": true
+  }
+}
+

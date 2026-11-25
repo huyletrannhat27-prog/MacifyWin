@@ -1,0 +1,10 @@
+{
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "editor.fontFamily": "'Inter', 'JetBrains Mono', Consolas, monospace",
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "smooth"
+}
+

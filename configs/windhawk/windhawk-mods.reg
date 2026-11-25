@@ -1,0 +1,24 @@
+Windows Registry Editor Version 5.00
+
+; MacifyWin - Cau hinh Windhawk Mods mac dinh
+; Lenh import: dung service WindhawkService -> reg import -> khoi dong lai service
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Windhawk\Engine\Mods\taskbar-dock-animation]
+"Disabled"=dword:00000000
+"LoggingEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Windhawk\Engine\Mods\taskbar-dock-animation\Settings]
+"MaxScale"=dword:0000008c
+"SpacingScale"=dword:00000078
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Windhawk\Engine\Mods\titlebar-for-everyone]
+"Disabled"=dword:00000000
+"LoggingEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Windhawk\Engine\Mods\windows-11-start-menu-styler]
+"Disabled"=dword:00000000
+"LoggingEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Windhawk\Engine\Mods\windows-11-start-menu-styler\Settings]
+"theme"="TranslucentStartMenu"
+
