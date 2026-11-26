@@ -1,10 +1,13 @@
 {
   "window.titleBarStyle": "custom",
+  "window.commandCenter": true,
+  "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
   "editor.fontFamily": "'Inter', 'JetBrains Mono', Consolas, monospace",
   "editor.smoothScrolling": true,
   "workbench.list.smoothScrolling": true,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth"
 }
-

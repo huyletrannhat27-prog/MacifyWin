@@ -77,7 +77,7 @@ if ($curFiles.Count -gt 0) {
     Write-Ok "Da ap dung bo con tro Capitaine Cursors."
 }
 
-# 3. Tu dong tao hinh nen gradient toi gian (CC0) neu chua co, roi dat lam hinh nen
+# 3. Tao hinh nen gradient mesh hien dai (CC0) neu chua co, roi dat lam hinh nen
 $wallDir = "$script:RepoRoot\assets\wallpapers"
 New-Item -ItemType Directory -Force -Path $wallDir | Out-Null
 $wall = Join-Path $wallDir "macify-gradient.png"
@@ -87,16 +87,33 @@ if (-not (Test-Path $wall)) {
         Add-Type -AssemblyName System.Drawing
         $bmp = New-Object System.Drawing.Bitmap(1920, 1080)
         $g = [System.Drawing.Graphics]::FromImage($bmp)
+        $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
         $rect = New-Object System.Drawing.Rectangle(0, 0, 1920, 1080)
-        $brush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
+        $baseBrush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
             $rect,
-            [System.Drawing.Color]::FromArgb(255, 22, 33, 62),
-            [System.Drawing.Color]::FromArgb(255, 83, 52, 131),
-            45
+            [System.Drawing.Color]::FromArgb(255, 13, 27, 62),
+            [System.Drawing.Color]::FromArgb(255, 58, 28, 113),
+            35
         )
-        $g.FillRectangle($brush, $rect)
+        $g.FillRectangle($baseBrush, $rect)
+
+        # Them 2 vung anh sang mem kieu macOS abstract wallpaper
+        $p1 = New-Object System.Drawing.Drawing2D.GraphicsPath
+        $p1.AddEllipse(-200, -200, 1400, 1200)
+        $b1 = New-Object System.Drawing.Drawing2D.PathGradientBrush($p1)
+        $b1.CenterColor = [System.Drawing.Color]::FromArgb(140, 0, 180, 216)
+        $b1.SurroundColors = @([System.Drawing.Color]::FromArgb(0, 0, 180, 216))
+        $g.FillPath($b1, $p1)
+
+        $p2 = New-Object System.Drawing.Drawing2D.GraphicsPath
+        $p2.AddEllipse(700, 250, 1400, 1100)
+        $b2 = New-Object System.Drawing.Drawing2D.PathGradientBrush($p2)
+        $b2.CenterColor = [System.Drawing.Color]::FromArgb(130, 255, 117, 140)
+        $b2.SurroundColors = @([System.Drawing.Color]::FromArgb(0, 255, 117, 140))
+        $g.FillPath($b2, $p2)
+
         $bmp.Save($wall, [System.Drawing.Imaging.ImageFormat]::Png)
-        $brush.Dispose(); $g.Dispose(); $bmp.Dispose()
+        $b1.Dispose(); $p1.Dispose(); $b2.Dispose(); $p2.Dispose(); $baseBrush.Dispose(); $g.Dispose(); $bmp.Dispose()
         Write-Ok "Da tao hinh nen macify-gradient.png."
     } catch {
         Write-Warn "Khong the tao hinh nen tu dong."

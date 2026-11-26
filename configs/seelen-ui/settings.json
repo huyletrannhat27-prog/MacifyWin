@@ -1,23 +1,23 @@
 {
-  "fancyToolbar": {
-    "enabled": true,
-    "position": "Top",
-    "height": 30,
-    "hideMode": "Never",
-    "dynamicColor": true
-  },
   "seelenweg": {
     "enabled": true,
     "position": "Bottom",
     "mode": "MinContent",
     "hideMode": "OnOverlap",
     "size": 46,
-    "zoomSize": 64,
-    "margin": 8,
+    "zoomSize": 66,
+    "margin": 10,
     "padding": 6,
     "borderRadius": 16,
     "spaceBetweenItems": 6,
     "showInstanceCounter": true
+  },
+  "fancyToolbar": {
+    "enabled": true,
+    "position": "Top",
+    "height": 30,
+    "hideMode": "Never",
+    "dynamicColor": true
   },
   "windowManager": {
     "enabled": false
@@ -26,4 +26,3 @@
     "enabled": true
   }
 }
-
